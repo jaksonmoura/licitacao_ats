@@ -51,7 +51,8 @@ if($_POST){
    if(move_uploaded_file($_FILES['name']["tmp_name"], $path . $new_name )){
         //connect & insert file record in database
         $link->query("INSERT INTO files (name, title, created_at, updated_at) VALUES ('$new_name', '$title', '$uploaded_at', '$uploaded_at')");
-        die("<h3>Arquivo enviado com sucesso!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
+        $_SESSION['message'] = 'Arquivo emviado com sucesso!';
+        header('location: list.php');
    }else{
         die("<h3>Erro ao enviar aquivo!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
    }
