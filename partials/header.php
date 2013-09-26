@@ -57,4 +57,5 @@
       </nav>
     </header>
     <div class="wrapper">
+      <div class="main_content">
       <div class="container">
