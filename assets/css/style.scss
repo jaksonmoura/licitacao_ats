@@ -129,6 +129,14 @@ header{
     }
   }
 }
+
+// ==============
+// ESTILOS COMUNS
+// ==============
+.tcenter{
+  text-align: center;
+}
+
 // ==============
 //     LISTA
 // ==============
@@ -145,7 +153,7 @@ header{
   float: right;
   background: #CCC;
   margin: -1px -10px 0 0;
-  width: 208px;
+  width: 200px;
   height: 36px;
   padding: 5px;
   border-radius: 3px 0 0 4px;
@@ -225,7 +233,7 @@ table{
           text-align: center;
       }
       .tactions{
-        width: 120px;
+        width: 150px;
         text-align: center;
       }
 
@@ -242,10 +250,30 @@ table{
       td:nth-child(2),td:nth-child(3){
         text-align: center;
       }
+
+      td:last-child a{
+        float: left;
+      }
     }
 
     tr:nth-child(2n+1){
       background: #C8EAFD;
+    }
+
+
+    .fremove{
+      float: left;
+      width: 32px;  
+      display: inline;
+    }
+
+    .iremove{
+      background: url(/licitacao/assets/img/remove.png) center center no-repeat;
+      width: 32px;
+      height: 32px;
+      border: none;
+      color: transparent;
+      cursor: pointer;
     }
   }
 }

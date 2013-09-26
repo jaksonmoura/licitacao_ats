@@ -50,6 +50,7 @@
   <div class="wrapper">
   <form class='box' name="form1" method="post" action="download.php">
     <h3>Entre com o CPF/CNPJ:</h3>
+    <span><small>O CPF/CNPJ é necessário para baixar o arquivo.</small></span><br/><br/>
     <input type = 'radio' name ='pessoa' value= 'cnpj' checked > <label for="pessoa">Pessoa Jurídica</label>
     <input type = 'radio' name ='pessoa' value= 'cpf'> <label for="pessoa">Pessoa Física</label>
     <br/>

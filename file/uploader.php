@@ -1,8 +1,11 @@
-<?php
+<?php 
 $path = '../assets/pdf/';
 
 include '../partials/header.php';
-include '../session.php';
+include '../config/session.php';
+ ?>
+<div class="box tcenter">
+<?php
 
 if (!@file_exists($path)) {
     //destination folder does not exist
@@ -11,11 +14,11 @@ if (!@file_exists($path)) {
 
 if($_POST){
     if(!isset($_POST['title']) || strlen($_POST['title'])<1){
-        die("O nome do arquivo está vazio!");
+        die("<h3>O nome do arquivo está vazio!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
     }
 
     if(!isset($_FILES['name'])){
-        die("Nenhum arquivo selecionado!");
+        die("<h3>Nenhum arquivo selecionado!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
     }
 
     if($_FILES['name']['error']){
@@ -38,7 +41,7 @@ if($_POST){
         case 'application/x-zip-compressed':
             break;
         default:
-            die('Arquivo não suportado!');
+            die("<h3>Arquivo não suportado!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
     }
 
     //File Title will be used as new File name
@@ -48,9 +51,9 @@ if($_POST){
    if(move_uploaded_file($_FILES['name']["tmp_name"], $path . $new_name )){
         //connect & insert file record in database
         $link->query("INSERT INTO files (name, title, created_at, updated_at) VALUES ('$new_name', '$title', '$uploaded_at', '$uploaded_at')");
-        die('Arquivo enviado com sucesso!');
+        die("<h3>Arquivo enviado com sucesso!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
    }else{
-        die('Erro ao enviar aquivo!');
+        die("<h3>Erro ao enviar aquivo!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
    }
 }
 
@@ -76,3 +79,4 @@ function upload_errors($err_code) {
     }
 }
 ?>
+</div>

@@ -1,7 +1,7 @@
 <?php 
 
 if(isset($_POST['submit'])){ 
-    include '../connection.php';
+    include '../config/connection.php';
 
     $usr = $link->real_escape_string($_POST['username']);
     $pas = hash('sha512', $link->real_escape_string($_POST['password'])); 

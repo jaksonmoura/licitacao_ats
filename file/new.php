@@ -1,5 +1,5 @@
 <?php 
-include '../session.php';
+include '../config/session.php';
 include '../partials/before_actions.php';
 include '../partials/header.php';
 ?>
@@ -34,14 +34,17 @@ function afterSuccess()
 
 </head>
 <body>
-<form action="uploader.php" id="uploader" enctype="multipart/form-data" method="post" >
-    <label>Nome do arquivo</label>
-    <input type="text" name="title" id="title" />
-    <br/>
-    <label>Escolha um arquivo</label>
-    <input type="file" name="name" id="name" />
-    <br/>
-    <button type="submit" class="red-button" id="uploadButton">Enviar</button>
-</form>
+    <div class="box">
+        <h3>Enviar arquivo:</h3>
+        <form action="uploader.php" id="uploader" enctype="multipart/form-data" method="post" >
+            <label>Nome do arquivo</label>
+            <input type="text" name="title" id="title" />
+            <br/><br/>
+            <label>Escolha um arquivo</label>
+            <input type="file" name="name" id="name" />
+            <br/>
+            <div class="actions"><input type="submit" value='Enviar'></div>
+        </form>
+    </div>
 </body>
 </html>

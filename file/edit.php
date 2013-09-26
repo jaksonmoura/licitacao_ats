@@ -1,24 +1,25 @@
-	<?php
+<?php
     $title = 'Editar Licitação';
     include '../config/session.php';
     include '../config/messages.php';
     include '../partials/header.php';
 
-    if (isset($_GET['edit'])){
-      $id = $_GET['edit'];
-      $t = $_GET['title'];
+    if (isset($_GET['id'])){
+      $id = $_GET['id'];
+      $t = $_GET['file'];
     }
-
 ?>
-
+<div class="box">
+  <h3>Editar licitação:</h3>
   <form action='edit.php' method='post'>
+    <label for="title">Nome do arquivo</label>
     <input type='text' value='<?php echo $t; ?>' name='title' >
     <input type='hidden' value='<?php echo $id; ?>' name='id'>
-    <input type='submit' value='ok' name='ok'> 
+    <div class="actions"><input type='submit' value='Editar'> </div>
   </form>
+</div>
 
 <?php
-
     if (isset($_POST['title'])){
       $t = $_POST['title'];
       $id = $_POST['id'];
