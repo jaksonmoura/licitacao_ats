@@ -1,7 +1,7 @@
 	<?php
     $title = 'Remover licitação';
-    include '../session.php';
-    include '../messages.php';
+    include '../config/session.php';
+    include '../config/messages.php';
     include '../partials/header.php';
     if (isset($_POST['file'])){
       $f = $_POST['file'];
