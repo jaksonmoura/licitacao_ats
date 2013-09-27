@@ -1,6 +1,6 @@
 <?php 
 $path = '../assets/pdf/';
-
+include '../partials/before_actions.php';
 include '../partials/header.php';
 include '../config/session.php';
  ?>
@@ -32,6 +32,7 @@ if($_POST){
     $size        = $_FILES['name']["size"];
     $rand_num    = rand(0, 9999999999);
     $uploaded_at = date("Y-m-d H:i:s");
+    $id_category = $_POST['category'];
 
     switch(strtolower($type)){
         case 'image/png':
@@ -50,7 +51,7 @@ if($_POST){
    //Rename and save uploded file to destination folder.
    if(move_uploaded_file($_FILES['name']["tmp_name"], $path . $new_name )){
         //connect & insert file record in database
-        $link->query("INSERT INTO files (name, title, created_at, updated_at) VALUES ('$new_name', '$title', '$uploaded_at', '$uploaded_at')");
+        $link->query("INSERT INTO licitacao.files (name, title, created_at, updated_at, category_id) VALUES ('$new_name', '$title', '$uploaded_at', '$uploaded_at', '$id_category')");
         $_SESSION['message'] = 'Arquivo emviado com sucesso!';
         header('location: list.php');
    }else{

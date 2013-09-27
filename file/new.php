@@ -42,6 +42,13 @@ function afterSuccess()
             <br/><br/>
             <label>Escolha um arquivo</label>
             <input type="file" name="name" id="name" />
+            <label>Escolha uma categoria</label>
+            <select name='category'>
+              <option value="1">Convite</option>
+              <option value="2">Tomada de Preços</option>
+              <option value="3">Concorência</option>
+              <option value="4">Pregão</option>
+            </select>
             <br/>
             <div class="actions"><input type="submit" value='Enviar'></div>
         </form>

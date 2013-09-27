@@ -1,4 +1,4 @@
-<?php
+  <?php
     $title = 'Editar Licitação';
     include '../config/session.php';
     include '../config/messages.php';
