@@ -50,7 +50,7 @@
             echo '<td>';
             if (LOGGED) {
               echo '
-                    <a href="edit.php?id='.$f['id'].'&file='.$f['name'].'"><img src="../assets/img/edit.png" alt="Editar" title="Editar"></a>
+                    <a href="edit.php?id='.$f['id'].'&file='.$f['title'].'"><img src="../assets/img/edit.png" alt="Editar" title="Editar"></a>
                     <form class="fremove" action="remove.php" method="post">
                       <input class="iremove" type="submit" value="Remover" title="Remover">
                       <input type="hidden" name="file" value='.$f['id'].'>
