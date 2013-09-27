@@ -1,7 +1,6 @@
 <?php
     $title = 'Editar Licitação';
     include '../config/session.php';
-    include '../config/messages.php';
     include '../partials/header.php';
 
     if (isset($_GET['id'])){
