@@ -1,7 +1,8 @@
 <?php
 session_start(); 
 if (!$_SESSION['logged']) { 
-    header("Location: /licitacao/session/login.php");
+    $url = $_SERVER['REQUEST_URI'];
+    header("Location: /licitacao/session/login.php?redirects_to=$url");
     exit; 
 }
  ?>

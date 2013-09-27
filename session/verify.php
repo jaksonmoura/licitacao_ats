@@ -12,7 +12,8 @@ if(isset($_POST['submit'])){
         $_SESSION['username'] = $row['username'];
         $_SESSION['logged'] = TRUE;
         $_SESSION['message'] = 'Você entrou!';
-        header("Location: ../file/list.php"); // Modify to go to the page you would like 
+        $url = $_POST['url'];
+        header("Location: $url"); // Modify to go to the page you would like 
         exit; 
     }else{ 
         header("Location: login.php"); 

@@ -17,28 +17,19 @@ a{
 }
 
 body{
-  background: #f1f1f1;
+  background: #435B6D;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #333;
   text-decoration: none;
 }
 
-header{
-  float: left;
-  background: #364753;
-  height: 50px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-
 .wrapper{
   width: 90%;
   margin: 0 auto;
   background: #fff;
-  box-shadow: 0 1px 1px 0 #ccc;
-  border: 1px solid #ccc;
+  // box-shadow: 0 1px 1px 0 #ccc;
+  // border: 1px solid #ccc;
   border-radius: 3px;
   margin-top: 20px;
   clear: both;
@@ -83,7 +74,18 @@ header{
 
 }
 
+.field{
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+
+  select{
+    width: 100%;
+  }
+}
+
 .actions{
+  float: left;
   margin: 15px 0;
   width: 100%;
   height: 40px;
@@ -101,6 +103,11 @@ header{
 }
 
 header{
+  float: left;
+  background: #364753;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
 
   .logo{
     float: left;
@@ -123,7 +130,6 @@ header{
       a{
         line-height: 50px;
         color: #fff;
-        background: rgba(#000, .2);
         padding: 15px;
         margin: 0;
       }
@@ -304,9 +310,10 @@ footer{
   margin: 50px auto;
   text-align: center;
   font-size: 14px;
-  color: #888;
+  color: rgba(#fff, .5);
 
   a{
-    color: #888;
+    color: rgba(#fff, .5);
+    text-decoration: underline;
   }
 }

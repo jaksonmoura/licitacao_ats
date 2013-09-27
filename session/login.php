@@ -8,6 +8,7 @@ include '../partials/header.php';
         <input type="text" name="username" autofocus><br>
         Senha:<br>
         <input type="password" name="password"><br>
+        <input type="hidden" name='url' value="<?php echo $_GET['redirects_to']; ?>">
         <div class="actions">
           <input type="submit" name="submit" value="Login">
         </div>

@@ -40,8 +40,9 @@
       <div class="logo"><a href="/licitacao/file/list.php"><img src="../assets/img/logo.png" alt="ATS" title='Licitação - ATS'/></a></div>
       <nav class="s_links">
         <ul>
-          <li><a href="/licitacao/file/list.php">Licitações</a></li>
+          <li><a href="/licitacao/file/search.php">Buscar Licitação</a></li>
           <?php if (LOGGED): ?>
+            <li><a href="/licitacao/file/list_all.php">Todas as Licitação</a></li>
             <li class="send_file"><a href="/licitacao/file/new.php">Enviar arquivo <img src="../assets/img/upload.png" alt=""></a></li>
           <?php endif ?>
         </ul>

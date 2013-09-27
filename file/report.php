@@ -3,7 +3,7 @@
 		include '../partials/header.php';
     // echo $USER = hash('sha512', '12qwaszx');
     $f = $_GET['file'];
-	$list = $link->query("SELECT * FROM downloads as d WHERE d.file_id = $f order by d.updated_at ASC;");
+	  $list = $link->query("SELECT * FROM downloads as d WHERE d.file_id = $f order by d.updated_at ASC;");
     ?>
     <table>
       <thead>
@@ -19,8 +19,8 @@
           while ($f = mysqli_fetch_assoc($list)){
             echo '<tr>';
             echo "<td> ". $f['cpf_cnpj']."</td>";
-            echo "<td>".$f['updated_at']."</td>";
-            echo "<td> </td>";
+            echo "<td>".strftime('%d/%m/%Y %H:%M:%S', strtotime($f['updated_at']))."</td>";
+            echo "<td></td>";
             echo '</tr>';
           }
         ?>

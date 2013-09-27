@@ -17,6 +17,10 @@ if($_POST){
         die("<h3>O nome do arquivo está vazio!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
     }
 
+    if(!isset($_POST['category_id']) || strlen($_POST['category_id'])<1){
+        die("<h3>Escolha uma categoria!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
+    }
+
     if(!isset($_FILES['name'])){
         die("<h3>Nenhum arquivo selecionado!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
     }
@@ -32,6 +36,7 @@ if($_POST){
     $size        = $_FILES['name']["size"];
     $rand_num    = rand(0, 9999999999);
     $uploaded_at = date("Y-m-d H:i:s");
+    $category_id = $_POST['category_id'];
 
     switch(strtolower($type)){
         case 'image/png':
@@ -50,9 +55,9 @@ if($_POST){
    //Rename and save uploded file to destination folder.
    if(move_uploaded_file($_FILES['name']["tmp_name"], $path . $new_name )){
         //connect & insert file record in database
-        $link->query("INSERT INTO files (name, title, created_at, updated_at) VALUES ('$new_name', '$title', '$uploaded_at', '$uploaded_at')");
-        $_SESSION['message'] = 'Arquivo emviado com sucesso!';
-        header('location: list.php');
+        $link->query("INSERT INTO files (name, title, created_at, updated_at, category_id) VALUES ('$new_name', '$title', '$uploaded_at', '$uploaded_at', '$category_id')");
+        $_SESSION['message'] = 'Arquivo enviado com sucesso!';
+        header('location: new.php');
    }else{
         die("<h3>Erro ao enviar aquivo!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
    }
