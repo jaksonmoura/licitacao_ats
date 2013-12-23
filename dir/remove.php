@@ -1,11 +1,11 @@
-	<?php
+  <?php
     $title = 'Remover licitação';
     include '../config/session.php';
     include '../partials/header.php';
     if (isset($_POST['file'])){
-      $f = $_POST['file'];
+      $d = $_POST['file'];
       $file_name = $_POST['name'];
-  	  $link->query("DELETE FROM licitacao.files WHERE id = ".$f);
+      $link->query("DELETE FROM licitacao.directories WHERE id = ".$d);
       if ($link->affected_rows>0) {
         unlink("../assets/pdf/".$file_name);
         $_SESSION['message'] = "Removido com sucesso";
@@ -18,6 +18,6 @@
     $url = $_POST['redirects_to'];
     header("location: $url");
     ?>
-<?php 
+<?php
 include '../partials/footer.php';
  ?>

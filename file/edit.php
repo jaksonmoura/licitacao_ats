@@ -16,22 +16,8 @@
       <label for="title">Nome do arquivo</label>
       <input type='text' value='<?php echo $file['title']; ?>' name='title' required>
     </div>
-    <div class="field">
-      <label for="category_id">Categoria</label>
-      <select name="category_id" required>
-        <?php 
-          $result = $link->query('select * from categories;');
-          while ($r = mysqli_fetch_assoc($result)) {
-            if (condition) {
-              echo '<option value="'.$r['id'].'" selected>'.$r['name'].'</option>';
-            } else {
-              echo '<option value="'.$r['id'].'">'.$r['name'].'</option>';
-            }
-          }
-         ?>
-      </select>
-    </div>
     <input type='hidden' value='<?php echo $file['id']; ?>' name='id'>
+    <input type='hidden' value='<?php echo $_GET['redirects_to']; ?>' name='url'>
     <div class="actions"><input type='submit' value='Editar'> </div>
   </form>
 </div>
@@ -40,15 +26,17 @@
     if (isset($_POST['title'])){
       $t = $_POST['title'];
       $id = $_POST['id'];
+      $cid = $_POST['category_id'];
   	  $link->query("UPDATE licitacao.files SET title='".$t."' WHERE id= ".$id);
       if ($link->affected_rows>0) {
         $_SESSION['message'] = "Editado com sucesso";
       } else {
         $_SESSION['message'] = "Não foi possível editar, tente novamente";
       }
-      header("location: list.php");
+      $url = $_POST['url'];
+      header("location: $url");
     }
     ?>
-<?php 
+<?php
 include '../partials/footer.php';
  ?>

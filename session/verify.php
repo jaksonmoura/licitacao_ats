@@ -1,5 +1,4 @@
 <?php 
-
 if(isset($_POST['submit'])){ 
     include '../config/connection.php';
 
@@ -12,8 +11,13 @@ if(isset($_POST['submit'])){
         $_SESSION['username'] = $row['username'];
         $_SESSION['logged'] = TRUE;
         $_SESSION['message'] = 'Você entrou!';
-        $url = $_POST['url'];
-        header("Location: $url"); // Modify to go to the page you would like 
+        // $url = $_POST['url'];
+        // echo $url;
+        // if (strlen($url)>0) {
+        //     header("Location: $url");
+        // } else {
+            header("Location: /licitacao/file/list_all.php"); 
+        // }
         exit; 
     }else{ 
         header("Location: login.php"); 

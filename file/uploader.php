@@ -1,8 +1,8 @@
-<?php 
+<?php
 $path = '../assets/pdf/';
 
-include '../partials/header.php';
-include '../config/session.php';
+include_once '../partials/header.php';
+include_once '../config/session.php';
  ?>
 <div class="box tcenter">
 <?php
@@ -15,10 +15,6 @@ if (!@file_exists($path)) {
 if($_POST){
     if(!isset($_POST['title']) || strlen($_POST['title'])<1){
         die("<h3>O nome do arquivo está vazio!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
-    }
-
-    if(!isset($_POST['category_id']) || strlen($_POST['category_id'])<1){
-        die("<h3>Escolha uma categoria!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
     }
 
     if(!isset($_FILES['name'])){
@@ -36,7 +32,7 @@ if($_POST){
     $size        = $_FILES['name']["size"];
     $rand_num    = rand(0, 9999999999);
     $uploaded_at = date("Y-m-d H:i:s");
-    $category_id = $_POST['category_id'];
+    $did = $_POST['directory_id'];
 
     switch(strtolower($type)){
         case 'image/png':
@@ -55,9 +51,9 @@ if($_POST){
    //Rename and save uploded file to destination folder.
    if(move_uploaded_file($_FILES['name']["tmp_name"], $path . $new_name )){
         //connect & insert file record in database
-        $link->query("INSERT INTO files (name, title, created_at, updated_at, category_id) VALUES ('$new_name', '$title', '$uploaded_at', '$uploaded_at', '$category_id')");
+        $link->query("INSERT INTO files (name, title, created_at, directory_id) VALUES ('$new_name', '$title', '$uploaded_at', '$did')");
         $_SESSION['message'] = 'Arquivo enviado com sucesso!';
-        header('location: new.php');
+        header("location: new.php?did=$did");
    }else{
         die("<h3>Erro ao enviar aquivo!</h3><br/><span><a href='new.php'>« Voltar</a></span>");
    }
@@ -67,21 +63,21 @@ if($_POST){
 function upload_errors($err_code) {
     switch ($err_code) {
         case UPLOAD_ERR_INI_SIZE:
-            return 'The uploaded file exceeds the upload_max_filesize directive in php.ini';
+            return 'O arquivo excede o tamanho máximo';
         case UPLOAD_ERR_FORM_SIZE:
-            return 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form';
+            return 'O arquivo excede o tamanho máximo especificado no formulário';
         case UPLOAD_ERR_PARTIAL:
-            return 'The uploaded file was only partially uploaded';
+            return 'O arquivo enviado foi apenas parcialmente salvo';
         case UPLOAD_ERR_NO_FILE:
-            return 'No file was uploaded';
+            return 'Nenhum arquivo foi enviado';
         case UPLOAD_ERR_NO_TMP_DIR:
-            return 'Missing a temporary folder';
+            return 'Faltando a pasta temporária';
         case UPLOAD_ERR_CANT_WRITE:
-            return 'Failed to write file to disk';
+            return 'Falha ao salvar arquivo no servidor';
         case UPLOAD_ERR_EXTENSION:
-            return 'File upload stopped by extension';
+            return 'Arquivo não enviado devido à extensão';
         default:
-            return 'Unknown upload error';
+            return 'Erro de envio desconhecido';
     }
 }
 ?>

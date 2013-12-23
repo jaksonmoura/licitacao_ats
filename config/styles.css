@@ -1,0 +1,96 @@
+/* Geral */
+* { margin:0; padding:0; font-family: Arial; font-size: 14px; color:#666; -moz-box-sizing: border-box; box-sizing: border-box; }
+a { text-decoration: none; color: #406CA7; }
+a:hover { text-decoration: underline; }
+
+h1, h2 { color:#A48301; }
+h1 { font-size:24px; margin-bottom: 10px; }
+h2 { font-size:16px; margin: 10px 0 5px 0; }
+
+/* Layout */
+.nav.wrapper { background: #EEE; display: table; width: 100%; }
+nav a { display: inline-block; padding: 35px 0;  width:180px; height: 90px; font-family:"Trebuchet MS"; font-size: 17px; text-transform: uppercase; padding-left: 35px; color:#27364B; }
+nav a:nth-child(1) { background: url('img/nav_1.png') no-repeat left center; }
+nav a:nth-child(2) { background: url('img/nav_2.png') no-repeat left center; }
+nav a:nth-child(3) { background: url('img/nav_5.png') no-repeat left center; }
+nav a:nth-child(4) { background: url('img/nav_3.png') no-repeat left center; }
+nav a:nth-child(5) { background: url('img/nav_4.png') no-repeat left center; }
+sidebar > * { display: block; margin-bottom: 10px; }
+
+.header.wrapper { background: #0D6BB5; display: table; width: 100%; }
+.header.wrapper h1 { color: white; margin:20px 0; display: block; }
+
+.area.title { color:#166AAD; text-transform: uppercase; font-size: 16px; border-bottom: 3px solid #CBCBCB; padding-bottom: 10px; }
+
+/* Pequenas coisas */
+a.button { background: #62AC39; padding: 5px; color: white; margin-top:10px; display: inline-block; }
+
+#main #content { margin-top:20px; margin-bottom: 20px; display: table; }
+
+/* Index */
+#main.index #destacao .img.wrapper { height: 250px; overflow: hidden; }
+#main.index #destacao a { display: block; position: absolute; background: rgba(0,0,0,0.7); margin-top:-50px; width:470px; height: 50px; padding:10px; color:white; }
+#main.index #acesso-rapido { background: white; padding:15px; }
+#main.index #acesso-rapido { height: 250px; }
+#main.index #acesso-rapido p { margin-bottom: 10px; }
+#main.index #acesso-rapido a { display: inline-block; width:205px; border-bottom: 1px solid #F3F3F3; margin:0 5px 5px 5px; padding:5px; color:#313131; font-size: 13px; font-weight: bold; }
+#main.index #acesso-rapido a:hover { color:#0469B9; }
+#main.index #destaque, #main.index #noticias { padding-bottom: 20px; display: block; }
+#main.index #destaque { margin-bottom: 10px; }
+#main.index #destaque a { font-size:16px; font-weight: bold; }
+#main.index #destaque img { margin-bottom:10px; }
+#main.index #noticias div { clear: both; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #F3F3F3; }
+#main.index #noticias div a { font-size:13px; font-weight: bold; }
+#main.index #noticias div img { float: left; margin:0 10px 10px 0; }
+#main.index #banners-grandes > * { display: block; margin-bottom: 10px; }
+#main.index #webmail input { background: #F3F3F3; border:1px solid #CCCCCC; padding:5px; margin:15px 15px 0 10px; float: left; }
+#main.index #webmail input:nth-child(1) { width:205px; }
+#main.index #webmail input:nth-child(2) { width:155px; }
+#main.index #webmail input[type=submit] { background: #24599D; color: white; text-transform: uppercase; font-size: 13px; margin-left: 0; width:35px; }
+
+#main.index #twitter, #main.index #facebook, #main.index #youtube { display: block; width: 38px; height:38px; float: left; text-indent: -99999px; overflow: hidden; margin:10px; }
+#main.index #twitter { background: url('img/twitter.png'); }
+#main.index #facebook { background: url('img/facebook.png'); }
+#main.index #youtube { background: url('img/youtube.png'); }
+
+/* Listagem de notícias */
+#main.noticias ul { list-style: none; }
+#main.noticias ul li { list-style: none; padding: 5px 0 }
+
+/* Notícia e página */
+#main.noticia article p,
+#main.pagina article p { line-height: 20px; margin-bottom:10px; }
+
+#main.noticia article #multimidia,
+#main.noticia article #conteudo,
+#main.pagina article #conteudo { margin-bottom: 20px; }
+
+#main.noticia article #multimidia, 
+#main.pagina article #multimidia { padding:10px; width: 320px; float: left; margin:0 10px 10px 0; background: #DFE8D7; }
+
+#main.noticia article #multimidia ul, 
+#main.pagina article #multimidia ul { list-style: none;  }
+
+#main.noticia article #attachment,
+#main.pagina article #attachment { clear: both; display: block; margin: 10px 0; }
+
+#main.noticia article #attachment ul,
+#main.pagina article #attachment ul { display: table; margin-left:20px; }
+
+#main.noticia article #attachment ul li,
+#main.pagina article #attachment ul li { line-height: 20px; }
+
+/* Galerias */
+
+#main.galerias { }
+#main.galeria {  }
+
+/* Mapa */
+
+#main.mapa ul { margin-left: 25px; }
+
+/* Segunda Via */
+
+#main.segunda-via p { margin:10px 0; } 
+#main.segunda-via p.error { background:#FFA1A1; padding:10px; color:#333; border:1px solid red; margin-bottom:20px; }
+#main.segunda-via input { border:1px solid #333; padding:3px; }
